@@ -1,0 +1,1 @@
+Upload For Buffalo University This is partially finished (about 85%) importer to transfer CIM/2 file formats into Smart Plant 3D. Once imported, it would create smart associations and allow for automatic modifications of the building(s).  Form1 is not the form to use, it is included as a testing form for errors while developing.
