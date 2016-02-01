@@ -1,0 +1,1 @@
+copy "C:\Documents and Settings\stded2\Desktop\CIMBuilding\CIMBuilding\CIMBuilding\bin\Debug\CIMBuilding.dll" "c:\CIMBuilding.dll"

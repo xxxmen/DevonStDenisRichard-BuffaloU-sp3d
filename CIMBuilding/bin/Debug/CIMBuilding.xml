@@ -1,0 +1,470 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+CIMBuilding
+</name>
+</assembly>
+<members>
+<member name="M:CIMBuilding.utilities.getRoundedNormalizedAngle(Ingr.SP3D.Common.Middle.Position,Ingr.SP3D.Common.Middle.Position)">
+	<summary>
+ Returns the vector angle between two points and normalizes it to 180 degrees (i.e. no negatives) 
+ </summary>
+	<param name="position1"></param>
+	<param name="position2"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.utilities.isPointOnALine(Ingr.SP3D.Common.Middle.Position,Ingr.SP3D.Common.Middle.Position,Ingr.SP3D.Common.Middle.Position,System.Double)">
+	<summary>
+ Checks if a point is on a line.
+ </summary>
+	<param name="queryPoint">point to check</param>
+	<param name="lineEndPoint1">one end of the line</param>
+	<param name="lineEndPoint2">other end of the line</param>
+	<param name="tolerance">Answer tolerance. Defaulted to 0 (normal case).  If changed, the solution will check the +/- range</param>
+	<returns></returns>
+	<remarks>The function results in about twice the distance from the line.</remarks>
+</member><member name="M:CIMBuilding.utilities.isPointOnDualPlane(Ingr.SP3D.Common.Middle.Position,Ingr.SP3D.Common.Middle.Position,System.Double,System.Double)">
+	<summary>
+ Checks if the "pointToCheck" is one of the two planes created by the planepoint and its rotational vector.  This is checked about the z vector
+ at 90 degrees.  Plane 1 is its normal plane (e.g. perpendicular to the web of a W-section).  Plane 2 is the rotated plane.
+ </summary>
+	<param name="planePoint"></param>
+	<param name="pointToCheck"></param>
+	<param name="tolerance"></param>
+	<returns>0 = Not on a plane; 1 on one plane; 2 on the other plane</returns>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.utilities.existsInCollection(Microsoft.VisualBasic.Collection,System.String)">
+	<summary>
+ Checks is a key value exists in a colleciton.  Returns "DNE" if the key is not found.
+ </summary>
+	<param name="collectionToSearch"></param>
+	<param name="keyValueToFind"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.utilities.removeCollectionElement(Microsoft.VisualBasic.Collection@,System.String)">
+	<summary>
+ Attempts to remove an element form a collection.  To be used if you do not know the element exists.
+ </summary>
+	<param name="collectionObject"></param>
+	<param name="keyValue"></param>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.utilities.collectionCount(Microsoft.VisualBasic.Collection)">
+	<summary>
+ Returns the number of elements in a collection.  Returns 0 if the collection is empty or not initialized.
+ </summary>
+	<param name="collectionObject"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.utilities.addToCollection(Microsoft.VisualBasic.Collection@,System.Object,System.String)">
+	<summary>
+ Deals with duplicate keys in a collection -- for adding
+ </summary>
+	<param name="cCollection"></param>
+	<param name="data"></param>
+	<param name="key"></param>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.utilities.compareNumbers(System.Double,System.Double,System.Double)">
+	<summary>
+ Compares the equality of two numbers within a precision factor (e.g. 0.02 difference)
+ </summary>
+	<param name="firstNumber"></param>
+	<param name="SecondNumber"></param>
+	<param name="precision">How far apart the numbers can be</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.utilities.compareLessThan(System.Double,System.Double,System.Double)">
+	<summary>
+ Checks if the first number is less than the second by a value greater than the 'precision'
+ </summary>
+	<param name="firstNumber"></param>
+	<param name="SecondNumber"></param>
+	<param name="precision"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.ruleProcessors.LPM5_CC003(System.String)">
+	<summary>
+ Cartesian_Point
+ </summary>
+	<param name="lineString">The whole string for the line</param>
+	<returns>an object of type "Cartesian_Point"</returns>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.ruleProcessors.LPM5_CC032(System.String)">
+	<summary>
+ Direction
+ </summary>
+	<param name="lineString">The whole string for the line</param>
+	<returns>an object of type "Direction"</returns>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.ruleProcessors.LPM5_CC122(System.String)">
+	<summary>
+ Functional_Role
+ </summary>
+	<param name="lineString">The whole string for the line</param>
+	<returns>an object of type "Functional_Role"</returns>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.ruleProcessors.LPM5_CC034(System.String)">
+	<summary>
+ SI_Unit -- Returns a Double to multiply with a measure to put it in SP3D native units
+ </summary>
+	<param name="lineString"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.ruleProcessors.LPM5_CC014X1(System.String)">
+	<summary>
+ Positive_Length_Measure
+ </summary>
+	<param name="lineString"></param>
+	<returns>A double</returns>
+	<remarks>Since this should only ever have a float value, we can assume the element content return</remarks>
+</member><member name="M:CIMBuilding.ruleProcessors.LPM5_CC030(System.String,Microsoft.VisualBasic.Collection@)">
+	<summary>
+ Context_Depnedent_Unit -- Possibly needs to be updated to handle the dimensional exponents
+ </summary>
+	<param name="lineString"></param>
+	<param name="directiveCollection"></param>
+	<returns></returns>
+	<remarks>Need to upgrade this later so it can be used for labelling purposes -- Dimensional exponents seem to be a lookup table, ignoring at the moment.</remarks>
+</member><member name="M:CIMBuilding.ruleProcessors.LPM5_CC110(System.String)">
+	<summary>
+ Assembly_Design_Structural_Member_Linear
+ </summary>
+	<param name="lineString"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.ruleProcessors.LPM5_CC310(System.String,Microsoft.VisualBasic.Collection@)">
+	<summary>
+ Coord_System_Cartesian_3D
+ </summary>
+	<param name="lineString"></param>
+	<param name="directiveCollection"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.ruleProcessors.LPM5_CC024(System.String,Microsoft.VisualBasic.Collection@)">
+	<summary>
+ Axis2_Placement_3D
+ </summary>
+	<param name="lineString"></param>
+	<param name="directiveCollection"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.ruleProcessors.LPM5_CC310X(System.String,Microsoft.VisualBasic.Collection@)">
+	<summary>
+ Coord_System
+ </summary>
+	<param name="lineString"></param>
+	<param name="directiveCollection"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.ruleProcessors.LPM5_CC034X(System.String,Microsoft.VisualBasic.Collection@)">
+	<summary>
+ Named_Unit
+ </summary>
+	<param name="lineString"></param>
+	<returns></returns>
+	<remarks>Have to check for the "*" as this can extend the class to a different type --&gt; different return types, so we use an object</remarks>
+</member><member name="M:CIMBuilding.ruleProcessors.LPM5_CC014X2(System.String,Microsoft.VisualBasic.Collection@)">
+	<summary>
+ length_unit
+ </summary>
+	<param name="lineString"></param>
+	<param name="directiveCollection"></param>
+	<returns></returns>
+	<remarks>This is a place holder (in the specs)</remarks>
+</member><member name="M:CIMBuilding.ruleProcessors.LPM5_CC014(System.String,Microsoft.VisualBasic.Collection@)">
+	<summary>
+ positive_length_measure_with_unit
+ </summary>
+	<param name="lineString"></param>
+	<param name="directiveCollection"></param>
+	<returns></returns>
+	<remarks>Place holder to focus the parent</remarks>
+</member><member name="M:CIMBuilding.ruleProcessors.LPM5_CC248(System.String,Microsoft.VisualBasic.Collection@)">
+	<summary>
+ Part
+ </summary>
+	<param name="lineString"></param>
+	<param name="directiveCollection"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.ruleProcessors.LPM5_CC249X(System.String,Microsoft.VisualBasic.Collection@)">
+	<summary>
+ Part_Prismatic -- A focusing agent; Advances to the next word
+ </summary>
+	<param name="lineString"></param>
+	<param name="directiveCollection"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.ruleProcessors.LPM5_CC249(System.String,Microsoft.VisualBasic.Collection@)">
+	<summary>
+ Part_Prismatic_Simple -- Needs Upgrade, See Remarks
+ </summary>
+	<param name="lineString"></param>
+	<param name="directiveCollection"></param>
+	<returns></returns>
+	<remarks>There are more unaccounted derivatives to account for.  Also, has a curved part possability</remarks>
+</member><member name="M:CIMBuilding.ruleProcessors.LPM5_CC312(System.String,Microsoft.VisualBasic.Collection@)">
+	<summary>
+ located_assembly
+ </summary>
+	<param name="lineString"></param>
+	<param name="directiveCollection"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.ruleProcessors.LPM5_CC318(System.String,Microsoft.VisualBasic.Collection@)">
+	<summary>
+ Located Structure
+ </summary>
+	<param name="lineString"></param>
+	<param name="directiveCollection"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.ruleProcessors.LPM5_CC112(System.String)">
+	<summary>
+ Assembly Manufacturing
+ </summary>
+	<param name="lineString"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.ruleProcessors.LPM5_CC129(System.String)">
+	<summary>
+ Structure
+ </summary>
+	<param name="lineString"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.ruleProcessors.LPM5_CC118(System.String,Microsoft.VisualBasic.Collection@)">
+	<summary>
+ Design_Part
+ </summary>
+	<param name="lineString"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.ruleProcessors.LPM5_CC179(System.String,Microsoft.VisualBasic.Collection@)">
+	<summary>
+ located_part
+ </summary>
+	<param name="lineString"></param>
+	<param name="directiveCollection"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.ruleProcessors.LPM5_CC100(System.String,Microsoft.VisualBasic.Collection@)">
+	<summary>
+ managed_data_item
+ </summary>
+	<param name="lineString"></param>
+	<param name="directiveCollection"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:CIMBuilding.ruleProcessors">
+	<summary>
+ A Module file containing the processors for the individual directives -- Symantec and Syntactic processors
+ </summary>
+	<remarks>ISSUES: - Need to parse past the Part Prismatics to get the steel types for labelling purposes
+                  - Part Prismatic also has sub-types.....have not seen them used yet though
+                  - Context Dependent Units -- Possibly need to upgrade this
+                  - Need to add Partsheet for Parts definition -- Check if the object "isnot nothing" for now -- This is for slabs
+</remarks>
+</member><member name="M:CIMBuilding.structureUtilities.relabelSteel(Ingr.SP3D.Structure.Middle.MemberSystem@,System.String,System.String)">
+	<summary>
+ Re-labels a steel member object and parent system.
+ </summary>
+	<param name="memberSystemObject"></param>
+	<param name="parentName"></param>
+	<param name="childName"></param>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.structureUtilities.buildSteelStructure(Microsoft.VisualBasic.Collection@,System.Boolean)">
+	<summary>
+ Attempts to place the steel members in the collection and add them to the steelObject.
+ </summary>
+	<param name="memberCollection">A collection of steelObject Objects.</param>
+	<remarks>The optional value thingy will need to be removed in the final version.  This is here to handle L-Steel which is unside down in SP3D</remarks>
+</member><member name="M:CIMBuilding.structureUtilities.beamOrColumn(CIMBuilding.coord_system_cartesian_3d)">
+	<summary>
+ Determines if a beam is a column or a beam based on its vector normals. 1=beam, 2=column
+ </summary>
+	<param name="cartesianObject"></param>
+	<returns>e</returns>
+	<remarks>d</remarks>
+</member><member name="M:CIMBuilding.structureUtilities.reassessBraces(Microsoft.VisualBasic.Collection@,Microsoft.VisualBasic.Collection@,Microsoft.VisualBasic.Collection)">
+	<summary>
+ Simple method to make false positive braces into beams.
+ </summary>
+	<param name="columnCollection"></param>
+	<param name="beamCollection"></param>
+	<param name="braceCollection"></param>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.structureUtilities.makePerimeter(Microsoft.VisualBasic.Collection,Microsoft.VisualBasic.Collection,System.Int32)">
+	<summary>
+ Makes the grid sub-collections where there are crossovers.
+ </summary>
+	<param name="perimeterCollection"></param>
+	<param name="repeats"></param>
+	<param name="level"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.structureUtilities.getMyBeamConnections(Microsoft.VisualBasic.Collection,Ingr.SP3D.Common.Middle.Position,Microsoft.VisualBasic.Collection,System.Double)">
+	<summary>
+ Gets beams/beam ends located at a point.  Excludes beams in the "usedBeams" collection (integer collection). 
+ </summary>
+	<param name="SP3DBeamObjects"></param>
+	<param name="steel"></param>
+	<param name="usedBeams"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.structureUtilities.rotateStructure(Ingr.SP3D.Common.Middle.Position,Microsoft.VisualBasic.Collection@,System.Double,System.Boolean)">
+	<summary>
+ Rotates a steel collection about the Z-Axis, with respect to the primary point
+ </summary>
+	<param name="primePoint">Point to rotate about</param>
+	<param name="steelCollection">A collection of steel</param>
+	<param name="rotationAngle">Angle to rotate to</param>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.structureUtilities.createGridPlanes(Ingr.SP3D.Common.Middle.CoordinateSystem@,Microsoft.VisualBasic.Collection,Ingr.SP3D.Systems.Middle.StructuralSystem,Microsoft.VisualBasic.Collection,System.Double,System.Double)">
+	<summary>
+ Creates the grid-planes and grid-lines from the collections provided.
+ </summary>
+	<param name="oCS">the coordinate system to use</param>
+	<param name="SP3DColumnObjects">A collection of the columns -- Datatype, not the actual created columns</param>
+	<param name="coordSystem">Structural System</param>
+	<param name="elevations">A collection of doubles of the various Z-plane heights to create</param>
+	<param name="bottomOfSteel">The bottom of structure -- To scale the building position</param>
+	<param name="tolerance">The amount a column can be off the plane to be in the collection</param>
+	<returns>The created line objects</returns>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.structureUtilities.getElevations(Microsoft.VisualBasic.Collection,Microsoft.VisualBasic.Collection)">
+	<summary>
+ gets the elevations of floors and steel.  Returns a collection of these elevations and the top and bottom maximal heights.
+ </summary>
+	<param name="SP3DColumnObjects"></param>
+	<param name="SP3DBeamObjects"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.structureUtilities.removeSteelObjectsFromCollection(Microsoft.VisualBasic.Collection@,Microsoft.VisualBasic.Collection)">
+	<summary>
+ Removes items form a steel collection, based on their start and end points
+ </summary>
+	<param name="totalSteelCollection"></param>
+	<param name="itemsToRemove"></param>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.structureUtilities.get2DBoundingBox(Microsoft.VisualBasic.Collection,Microsoft.VisualBasic.Collection)">
+	<summary>
+ Returns the, looking down, the column in the top right corner with an emphasis on the top 
+ </summary>
+	<param name="SP3DColumnObjects"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:CIMBuilding.measures">
+	<summary>
+ This class contains a collection of the units used in CIS/2.  The collection is keyed by the name of the unit.  The values are to be multiplied
+ into the measure so that the resulting value is in SP3D native measure (e.g. SP3D measures in metres natively, so it converts everything to metres)
+ </summary>
+	<remarks></remarks>
+</member><member name="P:CIMBuilding.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:CIMBuilding.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:CIMBuilding.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="T:CIMBuilding.coord_system">
+	<summary>
+ This is an abstract that allows for a child coordinate system based off of its parent.  The child system is optional.
+ </summary>
+	<remarks></remarks>
+</member><member name="T:CIMBuilding.design_part">
+	<summary>
+ The Design_Part class will require datatype classes within it.
+ </summary>
+	<remarks>"parentAssemblies" and "locations" can be a list of 1 to n -- While this is not normal, we need to allow for this, thusly the collecitons</remarks>
+</member><member name="T:CIMBuilding.item_reference_standard">
+	<summary>
+ This is a class to tie the reference standard and source standard together in a collection of associations
+ </summary>
+	<remarks></remarks>
+</member><member name="T:CIMBuilding.steelObject">
+	<summary>
+ A class to hold the steel members to be constructed, in a generic class.
+ </summary>
+	<remarks></remarks>
+</member><member name="T:CIMBuilding.twoDBoundingBox">
+	<summary>
+ Holds bounding box coordinates -- Intended for use with grid areas (originally)
+ </summary>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.SP3DUtilities.rotateObject(System.Object@,System.Double,System.String)">
+	<summary>
+ Rotates an SP3D object via its 4x4 matrix
+ </summary>
+	<param name="objectToRotate"></param>
+	<param name="RadianAngleToRotate"></param>
+	<param name="axisToRotateAbout"></param>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.SP3DUtilities.moveObject(System.Object@,Ingr.SP3D.Common.Middle.Position)">
+	<summary>
+ Moves an SP3D object via its 4x4 matrix
+ </summary>
+	<param name="objectToMove"></param>
+	<param name="moveToPosition"></param>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.CIMUtilities.loadDirectives(System.String)">
+	<summary>
+ Reads the specified file and returns a collection of collections keyed by their directive #ID -- directives, topLevelDirectives, itemStandards, itemAssignment
+ </summary>
+	<param name="fileName">Path to the file to read</param>
+	<returns>A Collection of collections</returns>
+	<remarks>Designed for CIM/2 step files.
+ The 'If tempString = "design_part".....' line defines the top level directives -- Designed Assembly was removed as this indicated a connection point
+ </remarks>
+</member><member name="M:CIMBuilding.CIMUtilities.getGlobalContext(Microsoft.VisualBasic.Collection,Microsoft.VisualBasic.Collection@)">
+	<summary>
+ Gets the unit measure (from the measures class) for global units such as coordinate systems
+ </summary>
+	<param name="contextCollection"></param>
+	<param name="directives"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.CIMUtilities.getSubDirectives(System.String)">
+	<summary>
+ Retrieves the directive numbers in a string and returns them as a collection
+ </summary>
+	<param name="lineToParse"></param>
+	<returns>Collection</returns>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.CIMUtilities.advanceToNextWord(System.String)">
+	<summary>
+ Advances to the next key word token in a line of bracket seperated directives/tokens.  Returns -1 if there are no more words to advance to.
+ </summary>
+	<param name="line"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.CIMUtilities.getbracketElements(System.String)">
+	<summary>
+ Seperates out items located within the first set of brackets, seperated by commas.  Sub-Bracketed items will be returned as an element of the array.
+ </summary>
+	<param name="line"></param>
+	<returns>Array of strings</returns>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.CIMUtilities.getBracketContent(System.String)">
+	<summary>
+ Returns a string with the complete contents of the first set of brackets encountered.
+ </summary>
+	<param name="line"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CIMBuilding.CIMUtilities.getWord(System.String)">
+	<summary>
+ Parses out and returns the directive key word for the line
+ </summary>
+	<param name="line"></param>
+	<returns>The directive word only</returns>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

@@ -1,0 +1,23 @@
+C:\Documents and Settings\stded2\Local Settings\Application Data\Temporary Projects\ClassLibrary1\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\stded2\Local Settings\Application Data\Temporary Projects\ClassLibrary1\obj\Debug\ClassLibrary1.Resources.resources
+C:\Documents and Settings\stded2\Local Settings\Application Data\Temporary Projects\ClassLibrary1\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\stded2\Local Settings\Application Data\Temporary Projects\ClassLibrary1\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\stded2\Local Settings\Application Data\Temporary Projects\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
+C:\Documents and Settings\stded2\Local Settings\Application Data\Temporary Projects\ClassLibrary1\bin\Debug\ClassLibrary1.xml
+C:\Documents and Settings\stded2\Local Settings\Application Data\Temporary Projects\ClassLibrary1\obj\Debug\ClassLibrary1.xml
+C:\Documents and Settings\stded2\Local Settings\Application Data\Temporary Projects\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
+C:\Documents and Settings\stded2\Local Settings\Application Data\Temporary Projects\ClassLibrary1\bin\Debug\ClassLibrary1.exe
+C:\Documents and Settings\stded2\Local Settings\Application Data\Temporary Projects\ClassLibrary1\obj\Debug\ClassLibrary1.Form1.resources
+C:\Documents and Settings\stded2\Local Settings\Application Data\Temporary Projects\ClassLibrary1\obj\Debug\ClassLibrary1.exe
+C:\Documents and Settings\stded2\Desktop\CIMBuilding\CIMBuilding\CIMBuilding\bin\Debug\CIMBuilding.pdb
+C:\Documents and Settings\stded2\Desktop\CIMBuilding\CIMBuilding\CIMBuilding\bin\Debug\CIMBuilding.xml
+C:\Documents and Settings\stded2\Desktop\CIMBuilding\CIMBuilding\CIMBuilding\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\stded2\Desktop\CIMBuilding\CIMBuilding\CIMBuilding\obj\Debug\CIMBuilding.Form1.resources
+C:\Documents and Settings\stded2\Desktop\CIMBuilding\CIMBuilding\CIMBuilding\obj\Debug\CIMBuilding.importBuildForm.resources
+C:\Documents and Settings\stded2\Desktop\CIMBuilding\CIMBuilding\CIMBuilding\obj\Debug\CIMBuilding.Resources.resources
+C:\Documents and Settings\stded2\Desktop\CIMBuilding\CIMBuilding\CIMBuilding\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\stded2\Desktop\CIMBuilding\CIMBuilding\CIMBuilding\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\stded2\Desktop\CIMBuilding\CIMBuilding\CIMBuilding\obj\Debug\CIMBuilding.xml
+C:\Documents and Settings\stded2\Desktop\CIMBuilding\CIMBuilding\CIMBuilding\obj\Debug\CIMBuilding.pdb
+C:\Documents and Settings\stded2\Desktop\CIMBuilding\CIMBuilding\CIMBuilding\bin\Debug\CIMBuilding.dll
+C:\Documents and Settings\stded2\Desktop\CIMBuilding\CIMBuilding\CIMBuilding\obj\Debug\CIMBuilding.dll
